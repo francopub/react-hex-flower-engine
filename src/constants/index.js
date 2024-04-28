@@ -1,13 +1,22 @@
-import WEATHER_ENGINE from "./engines/weather";
+import WINTER_WEATHER_ENGINE from "./engines/winter";
 
-import STANDARD_ENGINE from "./engines/standard";
+import SPRING_WEATHER_ENGINE from "./engines/spring";
 
-import INVERSE_ENGINE from "./engines/inverse";
+import SUMMER_WEATHER_ENGINE from "./engines/summer";
+
+import AUTUMN_WEATHER_ENGINE from "./engines/autumn";
+
+import HITCHING_WEATHER_ENGINE from "./engines/hitching";
+
+import VAGUE_WEATHER_ENGINE from "./engines/vague";
 
 export const DEFAULT_ENGINE_STORE = [
-  STANDARD_ENGINE,
-  WEATHER_ENGINE,
-  INVERSE_ENGINE,
+  WINTER_WEATHER_ENGINE,
+  SPRING_WEATHER_ENGINE,
+  SUMMER_WEATHER_ENGINE,
+  AUTUMN_WEATHER_ENGINE,
+  VAGUE_WEATHER_ENGINE,
+  HITCHING_WEATHER_ENGINE,
 ];
 
 export const LOCAL_STORAGE_NAMESPACE = "HEX_FLOWER_ENGINE";

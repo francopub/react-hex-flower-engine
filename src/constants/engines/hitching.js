@@ -1,17 +1,21 @@
 import { DEFAULT_DIRECTION_MAP as directions } from "./shared";
 
-const id = "00001";
+const id = "00006";
 
-const name = "Weather";
+const name = "Hitching";
 
 const start = 1;
 
 const version = "1.2.2";
 
 const nodes = [
+// TYPICAL MILD
   {
     id: 1,
-    label: "Sunny; pleasant",
+    label: "Thick, hot fog",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "day",
@@ -27,7 +31,10 @@ const nodes = [
   },
   {
     id: 2,
-    label: "Bright and breezy; light clouds",
+    label: "Thick, hot fog",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "day-cloudy-windy",
@@ -43,7 +50,11 @@ const nodes = [
   },
   {
     id: 3,
-    label: "Partly cloudy",
+    label: "Misty, seeping damp",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "day-partly-cloudy",
@@ -59,7 +70,11 @@ const nodes = [
   },
   {
     id: 5,
-    label: "Partly sunny",
+    label: "Misty, seeping damp",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "day-cloudy",
@@ -75,7 +90,11 @@ const nodes = [
   },
   {
     id: 4,
-    label: "Cloudy and breezy; chance of light showers",
+    label: "Misty, seeping damp",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "cloudy-and-windy",
@@ -91,10 +110,9 @@ const nodes = [
   },
   {
     id: 7,
-    label: "Steady breezes; quite windy",
-    style: {
-      backgroundColor: "#ddddde",
-      icon: "wind",
+    label: "Balmy mist",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
     },
     map: {
       up: 12,
@@ -107,10 +125,13 @@ const nodes = [
   },
   {
     id: 6,
-    label: "Dark; overcast",
-    style: {
-      backgroundColor: "#ddddde",
-      icon: "day-cloudy-foggy",
+    label: "Misty, seeping damp",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
+    },
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
     },
     map: {
       up: 11,
@@ -123,7 +144,11 @@ const nodes = [
   },
   {
     id: 8,
-    label: "Heavy clouds",
+    label: "Misty, seeping damp",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
+    },
     style: {
       backgroundColor: "#ddddde",
       icon: "cloudy",
@@ -153,12 +178,17 @@ const nodes = [
       upLeft: 12,
     },
   },
+// LEFT LOBE NO WEATHER
   {
     id: 12,
-    label: "Relentless sun",
+    label: "Hazy fog, dripping",
     style: {
       backgroundColor: "#eabcd5",
       icon: "day",
+    },
+    modifiers {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start.",
     },
     map: {
       up: 17,
@@ -171,7 +201,7 @@ const nodes = [
   },
   {
     id: 9,
-    label: "Oppressive sun",
+    label: "Gloomy, shadows drip",
     style: {
       backgroundColor: "#eabcd5",
       icon: "day",
@@ -187,13 +217,13 @@ const nodes = [
   },
   {
     id: 14,
-    label: "Severe heat; chance of exhaustion",
+    label: "Sticky dew drips",
     modifiers: {
-      Exhaustion: "DC 5 CON Save",
+      Wet: "Fires are harder to start.",
     },
     style: {
       backgroundColor: "#eabcd5",
-      icon: "hot",
+      icon: "day",
     },
     map: {
       up: 4,
@@ -204,12 +234,12 @@ const nodes = [
       upLeft: 6,
     },
   },
+// RIGHT LOBE HAS WEATHER
   {
     id: 13,
-    label: "Heavy constant rain; reduced visibility",
+    label: "Interminable drizzle.",
     modifiers: {
-      Stealth: "+1",
-      Perception: "-1",
+      Wet: "Fires are harder to start."
     },
     style: {
       backgroundColor: "#77bc77",
@@ -226,7 +256,11 @@ const nodes = [
   },
   {
     id: 11,
-    label: "Lightning and sunshine; roll for rainbow",
+    label: "Befuddling green fog",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Confusion: "CTRL save to avoid getting lost",
+    },
     style: {
       backgroundColor: "#77bc77",
       icon: "day-thunderstorms",
@@ -242,7 +276,11 @@ const nodes = [
   },
   {
     id: 16,
-    label: "Dark thunder storms; low visibility",
+    label: "Befuddling green fog",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Confusion: "CTRL save to avoid getting lost",
+    },
     style: {
       backgroundColor: "#77bc77",
       icon: "thunderstorms",
@@ -256,10 +294,14 @@ const nodes = [
       upLeft: 18,
     },
   },
+// TOP COLLAR SEVERE WEATHER
   {
     id: 15,
-    label:
-      "Severe lightning; high winds; exposure to the elements is dangerous",
+    label: "Torrential rain.",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start."
+    },
     style: {
       backgroundColor: "#ffcf77",
       icon: "thundershowers",
@@ -275,8 +317,11 @@ const nodes = [
   },
   {
     id: 17,
-    label:
-      "Severe lightning; high winds; exposure to the elements is dangerous",
+    label: "Torrential rain.",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start."
+    },
     style: {
       backgroundColor: "#ffcf77",
       icon: "thundershowers",
@@ -292,8 +337,11 @@ const nodes = [
   },
   {
     id: 18,
-    label:
-      "Severe lightning; high winds; exposure to the elements is dangerous",
+    label: "Torrential rain.",
+    modifiers: {
+      Vision: "Getting lost and surprised by encounters more likely",
+      Wet: "Fires are harder to start."
+    },
     style: {
       backgroundColor: "#ffcf77",
       icon: "thundershowers",
@@ -309,10 +357,10 @@ const nodes = [
   },
   {
     id: 19,
-    label: "Disaster! Zero visibility",
+    label: "Sleepy, purple mist.",
     modifiers: {
-      Exhaustion: "DC 10 CON Save",
-      Vision: "Heavily Obscured",
+      Vision: "Getting lost and surprised by encounters more likely",
+      Sleep: "CTRL save to avoid magical sleep",
     },
     style: {
       backgroundColor: "#ff7777",
